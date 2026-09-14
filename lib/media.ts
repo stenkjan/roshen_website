@@ -59,11 +59,13 @@ export const GALLERY: Photo[] = [
   PHOTOS.villageEvening,
 ];
 
+// Public-facing details only: first name and town, no full name and no street
+// address — the exact location is something Roshen shares over WhatsApp.
 export const CONTACT = {
-  name: "Menantheus Roshen Muduwantha",
+  name: "Roshen",
   phoneDisplay: "+94 78 691 5604",
   phoneHref: "tel:+94786915604",
   whatsapp: "https://wa.me/94786915604",
-  address: "Kashyapagama, Pidurangala, Sigiriya, Sri Lanka",
-  maps: "https://www.google.com/maps/search/?api=1&query=Pidurangala+Kashyapagama+Sigiriya+Sri+Lanka",
+  address: "Sigiriya, Sri Lanka",
+  maps: "https://www.google.com/maps/search/?api=1&query=Sigiriya+Sri+Lanka",
 };

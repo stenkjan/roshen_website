@@ -64,7 +64,6 @@ const jsonLd = {
   telephone: "+94786915604",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Kashyapagama, Pidurangala",
     addressLocality: "Sigiriya",
     addressCountry: "LK",
   },

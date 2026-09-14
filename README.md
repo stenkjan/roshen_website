@@ -1,7 +1,9 @@
 # Roshen — Sigiriya Local Guide
 
-Marketing site for **Menantheus Roshen Muduwantha**, a local guide living in
-Kashyapagama, Pidurangala (Sigiriya, Sri Lanka).
+Marketing site for **Roshen**, a local guide in Sigiriya, Sri Lanka.
+
+The site deliberately shows only his first name and "Sigiriya" as the location —
+no full name and no street address. Keep it that way when editing content.
 
 - Mobile-first one-pager, Next.js 15 App Router, static export (`output: "export"`).
 - Four languages switchable from the header: **English, සිංහල, हिन्दी, Deutsch**.
