@@ -27,9 +27,34 @@ export const PHOTOS = {
   rockPuppies: photo("rock-puppies", 820, 1093),
   jungleMushrooms: photo("jungle-mushrooms", 760, 1013),
   rockLizard: photo("rock-lizard", 760, 1013),
+  bikeTourGuests: photo("bike-tour-guests", 1200, 1195),
+  jungleBikePath: photo("jungle-bike-path", 1100, 1300),
+  forestStupa: photo("forest-stupa", 1400, 919),
+  villageTourFlyer: photo("village-tour-flyer", 1000, 1326),
 } satisfies Record<string, Photo>;
 
-export const VIDEO = { src: "/media/sigiriya-clip.mp4", w: 496, h: 368 };
+export type Clip = {
+  slug: string;
+  src: string;
+  w: number;
+  h: number;
+  /** Still used as the thumbnail in the switcher — a real frame from the clip. */
+  poster: Photo;
+};
+
+const clip = (slug: string, w: number, h: number, poster: Photo): Clip => ({
+  slug,
+  src: `/media/${slug}.mp4`,
+  w,
+  h,
+  poster,
+});
+
+/** Video band clips. The first one is the featured player when the page loads. */
+export const CLIPS: Clip[] = [
+  clip("lake-bike-ride", 576, 1024, photo("lake-bike-ride-poster", 480, 854)),
+  clip("sigiriya-clip", 496, 368, photo("sigiriya-clip-poster", 480, 356)),
+];
 
 /** Photo used for each tour card, in the order the cards are rendered. */
 export const TOUR_PHOTOS: Photo[] = [
@@ -46,17 +71,21 @@ export const GALLERY: Photo[] = [
   PHOTOS.sunriseMeditation,
   PHOTOS.pidurangalaSunsetDog,
   PHOTOS.lionRockView,
+  PHOTOS.bikeTourGuests,
   PHOTOS.lotusBlessing,
   PHOTOS.sunsetGuests,
   PHOTOS.thalkoteWewa,
+  PHOTOS.jungleBikePath,
   PHOTOS.rockPuppies,
   PHOTOS.roshenGuestField,
+  PHOTOS.forestStupa,
   PHOTOS.wildHoney,
   PHOTOS.roshenBoulder,
   PHOTOS.jungleMushrooms,
   PHOTOS.rockLizard,
   PHOTOS.guesthouseHangout,
   PHOTOS.villageEvening,
+  PHOTOS.villageTourFlyer,
 ];
 
 // Public-facing details only: first name and town, no full name and no street
