@@ -440,9 +440,56 @@ p {
   box-shadow: 0 30px 70px -35px rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.1);
   max-width: 560px;
+  /* aspect-ratio and width come in per clip: a portrait clip gets the width its
+     height allows, a landscape one runs up against max-width. */
   width: 100%;
   margin-inline: auto;
-  aspect-ratio: 496 / 368;
+}
+
+.clip-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.clip-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 15px 5px 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(244, 239, 230, 0.76);
+  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  text-align: start;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.clip-tab img {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.clip-tab:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f4efe6;
+}
+
+.clip-tab.is-active {
+  border-color: var(--amber);
+  background: rgba(224, 152, 59, 0.16);
+  color: #f4efe6;
 }
 
 .video-shell video {

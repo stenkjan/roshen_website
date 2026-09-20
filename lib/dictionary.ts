@@ -24,7 +24,15 @@ export type Copy = {
     secondary: string;
     badges: string[];
   };
-  video: { kicker: string; title: string; text: string; unmute: string; mute: string };
+  video: {
+    kicker: string;
+    title: string;
+    text: string;
+    unmute: string;
+    mute: string;
+    /** Short label per clip slug, shown on the switcher buttons. */
+    clips: Record<string, string>;
+  };
   about: {
     kicker: string;
     title: string;
@@ -74,9 +82,13 @@ const en: Copy = {
   video: {
     kicker: "Video",
     title: "A moment out here",
-    text: "Filmed on one of the rocks above the village — this is the everyday view we walk to.",
+    text: "Two short clips from ordinary days here: riding out along the lake until Lion Rock appears across the water, and the view from the rocks above the village.",
     unmute: "Sound on",
     mute: "Sound off",
+    clips: {
+      "lake-bike-ride": "Along the lake — until Lion Rock appears",
+      "sigiriya-clip": "From the rocks above the village",
+    },
   },
   about: {
     kicker: "About",
@@ -156,6 +168,10 @@ const en: Copy = {
       "rock-puppies": "Puppies on the rock trail",
       "jungle-mushrooms": "Mushrooms after the rain",
       "rock-lizard": "A lizard warming up on the rock",
+      "bike-tour-guests": "Bikes picked up, ready to ride out with guests",
+      "jungle-bike-path": "Cycling a forest track out of the village",
+      "forest-stupa": "An old dagoba in the forest, no one else there",
+      "village-tour-flyer": "The village tour: bullock cart, canoe and lunch at a village house",
     },
   },
   how: {
@@ -220,9 +236,13 @@ const de: Copy = {
   video: {
     kicker: "Video",
     title: "Ein Moment hier draußen",
-    text: "Aufgenommen auf einem der Felsen über dem Dorf — das ist der ganz normale Ausblick, zu dem wir laufen.",
+    text: "Zwei kurze Clips von ganz normalen Tagen hier: die Fahrt am See entlang, bis Lion Rock über dem Wasser auftaucht, und der Blick von den Felsen über dem Dorf.",
     unmute: "Ton an",
     mute: "Ton aus",
+    clips: {
+      "lake-bike-ride": "Am See entlang — bis Lion Rock auftaucht",
+      "sigiriya-clip": "Von den Felsen über dem Dorf",
+    },
   },
   about: {
     kicker: "Über mich",
@@ -302,6 +322,10 @@ const de: Copy = {
       "rock-puppies": "Welpen am Felsenweg",
       "jungle-mushrooms": "Pilze nach dem Regen",
       "rock-lizard": "Eine Echse wärmt sich auf dem Fels",
+      "bike-tour-guests": "Räder geholt, gleich geht es mit Gästen los",
+      "jungle-bike-path": "Auf dem Waldweg aus dem Dorf hinaus",
+      "forest-stupa": "Eine alte Dagoba im Wald, sonst niemand da",
+      "village-tour-flyer": "Die Dorftour: Ochsenkarren, Kanu und Mittagessen im Dorfhaus",
     },
   },
   how: {
@@ -366,9 +390,13 @@ const si: Copy = {
   video: {
     kicker: "වීඩියෝ",
     title: "මෙහි එක් මොහොතක්",
-    text: "ගමට ඉහළින් ඇති ගලක් මතින් රූගත කළා — අප ඇවිද යන්නේ මේ දර්ශනය බලන්නයි.",
+    text: "මෙහි සාමාන්‍ය දිනවල කෙටි වීඩියෝ දෙකක්: වැව අයිනේ බයිසිකලයෙන් යද්දී දිය මතින් සීගිරි ලෙන්ගල දිස්වන අයුරු, සහ ගමට ඉහළින් ඇති ගල් මතින් පෙනෙන දසුන.",
     unmute: "ශබ්දය ක්‍රියාත්මකයි",
     mute: "ශබ්දය නවතන්න",
+    clips: {
+      "lake-bike-ride": "වැව අයිනේ — සීගිරි ලෙන්ගල දිස්වන තුරු",
+      "sigiriya-clip": "ගමට ඉහළින් ඇති ගල් මතින්",
+    },
   },
   about: {
     kicker: "මා ගැන",
@@ -448,6 +476,10 @@ const si: Copy = {
       "rock-puppies": "ගල් පාරේ බලු පැටවු",
       "jungle-mushrooms": "වැස්සෙන් පසු හතු",
       "rock-lizard": "ගල මත රත් වන කටුස්සෙක්",
+      "bike-tour-guests": "බයිසිකල් සූදානම්, අමුත්තන් සමඟ පිටත් වීමට",
+      "jungle-bike-path": "ගමෙන් පිටතට වන පාරේ බයිසිකලයෙන්",
+      "forest-stupa": "වනාන්තරයේ පැරණි දාගැබක්, වෙන කිසිවෙක් නැහැ",
+      "village-tour-flyer": "ගම් චාරිකාව: කරත්තය, ඔරුව සහ ගමේ නිවසක දිවා ආහාරය",
     },
   },
   how: {
@@ -512,9 +544,13 @@ const hi: Copy = {
   video: {
     kicker: "वीडियो",
     title: "यहाँ का एक पल",
-    text: "गाँव के ऊपर की एक चट्टान से लिया गया — यही वह नज़ारा है जहाँ तक हम पैदल जाते हैं।",
+    text: "यहाँ के आम दिनों की दो छोटी क्लिप: झील के किनारे साइकिल चलाते हुए, जब तक पानी के पार लायन रॉक न दिखे, और गाँव के ऊपर की चट्टानों से दिखता नज़ारा।",
     unmute: "आवाज़ चालू",
     mute: "आवाज़ बंद",
+    clips: {
+      "lake-bike-ride": "झील के किनारे — जब तक लायन रॉक न दिखे",
+      "sigiriya-clip": "गाँव के ऊपर की चट्टानों से",
+    },
   },
   about: {
     kicker: "मेरे बारे में",
@@ -594,6 +630,10 @@ const hi: Copy = {
       "rock-puppies": "चट्टानी रास्ते पर पिल्ले",
       "jungle-mushrooms": "बारिश के बाद उगे मशरूम",
       "rock-lizard": "चट्टान पर धूप सेंकती छिपकली",
+      "bike-tour-guests": "साइकिलें तैयार, मेहमानों के साथ निकलने को",
+      "jungle-bike-path": "गाँव से बाहर जंगल के रास्ते साइकिल पर",
+      "forest-stupa": "जंगल में एक पुराना दागोबा, और कोई नहीं",
+      "village-tour-flyer": "गाँव की सैर: बैलगाड़ी, डोंगी और गाँव के घर में दोपहर का खाना",
     },
   },
   how: {
